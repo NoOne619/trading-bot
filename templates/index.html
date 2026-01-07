@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Bot Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #4caf50;
+            text-align: center;
+        }
+        .status-card {
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .status-online {
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #3d3d3d;
+        }
+        th {
+            background-color: #333;
+            color: #bbb;
+        }
+        tr:hover {
+            background-color: #383838;
+        }
+        .buy {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .sell {
+            color: #f44336;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // Auto-refresh every 5 seconds
+        setTimeout(function(){
+           location.reload(); 
+        }, 5000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Assignment #4 Trading Bot</h1>
+        
+        <div class="status-card">
+            Status: <span class="status-online">● ONLINE</span>
+            <br>
+            <small>Refreshing every 5s</small>
+        </div>
+
+        <h2>Trade History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Action</th>
+                    <th>Symbol</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trade in trades %}
+                <tr>
+                    <td>{{ trade.Timestamp }}</td>
+                    <td class="{{ trade.Action|lower }}">{{ trade.Action|upper }}</td>
+                    <td>{{ trade.Symbol }}</td>
+                    <td>{{ trade.Price }}</td>
+                    <td>{{ trade.Amount }}</td>
+                    <td>{{ trade.Status }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="6" style="text-align:center;">No trades yet. Waiting for signals...</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

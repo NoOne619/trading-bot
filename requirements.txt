@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+ccxt<4.0.0
+pandas
+python-dotenv
+jinja2

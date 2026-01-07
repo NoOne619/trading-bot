@@ -1,0 +1,35 @@
+//@version=5
+strategy("EMA + RSI Strategy [Bot]", overlay=true, margin_long=100, margin_short=100)
+
+// --- Settings ---
+fastLen = input.int(9, "Fast EMA Length")
+slowLen = input.int(21, "Slow EMA Length")
+rsiLen = input.int(14, "RSI Length")
+rsiOverbought = input.int(70, "RSI Overbought")
+rsiOversold = input.int(30, "RSI Oversold")
+
+// --- Indicators ---
+fastEMA = ta.ema(close, fastLen)
+slowEMA = ta.ema(close, slowLen)
+rsi = ta.rsi(close, rsiLen)
+
+// --- Plotting ---
+plot(fastEMA, color=color.blue, title="Fast EMA")
+plot(slowEMA, color=color.orange, title="Slow EMA")
+
+// --- Logic ---
+longCondition = ta.crossover(fastEMA, slowEMA) and rsi < rsiOverbought
+shortCondition = ta.crossunder(fastEMA, slowEMA) and rsi > rsiOversold
+
+// --- Execution ---
+if (longCondition)
+    strategy.entry("Long", strategy.long)
+    alert('{"action": "buy", "ticker": "' + syminfo.ticker + '", "price": ' + str.tostring(close) + '}', alert.freq_once_per_bar_close)
+
+if (shortCondition)
+    strategy.entry("Short", strategy.short)
+    alert('{"action": "sell", "ticker": "' + syminfo.ticker + '", "price": ' + str.tostring(close) + '}', alert.freq_once_per_bar_close)
+
+// --- Visuals ---
+plotshape(series=longCondition, title="Buy Signal", location=location.belowbar, color=color.green, style=shape.labelup, text="BUY")
+plotshape(series=shortCondition, title="Sell Signal", location=location.abovebar, color=color.red, style=shape.labeldown, text="SELL")

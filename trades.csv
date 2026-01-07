@@ -1,0 +1,22 @@
+Timestamp,Action,Symbol,Price,Amount,Status,Error
+2025-12-06 17:11:40,buy,BTC/USDT,45000.5,0.001,FAILED,"binanceusdm {""code"":-4164,""msg"":""Order's notional must be no smaller than 100 (unless you choose reduce only).""}"
+2025-12-06 17:11:42,sell,BTC/USDT,46000.0,0.001,FAILED,"binanceusdm {""code"":-4164,""msg"":""Order's notional must be no smaller than 100 (unless you choose reduce only).""}"
+2025-12-06 17:16:45,buy,BTC/USDT,45000.5,0.001,FAILED,"binanceusdm {""code"":-4164,""msg"":""Order's notional must be no smaller than 100 (unless you choose reduce only).""}"
+2025-12-06 17:16:46,sell,BTC/USDT,46000.0,0.001,FAILED,"binanceusdm {""code"":-4164,""msg"":""Order's notional must be no smaller than 100 (unless you choose reduce only).""}"
+2025-12-06 17:21:00,buy,BTC/USDT,45000.5,0.003,FAILED,"binanceusdm {""code"":-2019,""msg"":""Margin is insufficient.""}"
+2025-12-06 17:21:01,sell,BTC/USDT,46000.0,0.003,FAILED,"binanceusdm {""code"":-2019,""msg"":""Margin is insufficient.""}"
+2025-12-06 17:23:27,buy,BTC/USDT,45000.5,0.003,FAILED,"binanceusdm {""code"":-2019,""msg"":""Margin is insufficient.""}"
+2025-12-06 17:23:43,buy,BTC/USDT,45000.5,0.003,FAILED,"binanceusdm {""code"":-2019,""msg"":""Margin is insufficient.""}"
+2025-12-06 17:23:45,sell,BTC/USDT,46000.0,0.003,FAILED,"binanceusdm {""code"":-2019,""msg"":""Margin is insufficient.""}"
+2025-12-06 17:28:53,buy,BTC/USDT,45000.5,0.003,SUCCESS,
+2025-12-06 17:28:54,sell,BTC/USDT,46000.0,0.003,SUCCESS,
+2025-12-14 18:56:55,buy,BTC/USDT,95000.0,0.003,SUCCESS,
+2025-12-14 18:57:02,buy,BTC/USDT,95000.0,0.003,SUCCESS,
+2025-12-14 18:58:02,buy,BTC/USDT,95000.0,0.003,SUCCESS,
+2025-12-14 18:59:02,buy,BTC/USDT,95000.0,0.003,SUCCESS,
+2025-12-14 19:00:04,buy,BTC/USDT,95000.0,0.003,SUCCESS,
+2025-12-14 19:01:01,buy,BTC/USDT,95000.0,0.003,SUCCESS,
+2025-12-14 19:02:01,buy,BTC/USDT,95000.0,0.003,SUCCESS,
+2025-12-14 19:03:01,buy,BTC/USDT,95000.0,0.003,SUCCESS,
+2025-12-14 19:03:40,buy,BTC/USDT,95000.0,0.003,SUCCESS,
+2025-12-14 19:15:44,buy,BTC/USDT,95000.0,0.003,SUCCESS,
