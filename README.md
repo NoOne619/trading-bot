@@ -1,4 +1,4 @@
-# Crypto Trading Bot (Assignment #4)
+# Crypto Trading Bot 
 
 ## Overview
 A fully automated trading bot using TradingView (Pine Script) for signals and Python (FastAPI + CCXT) for execution on a Testnet Exchange.
